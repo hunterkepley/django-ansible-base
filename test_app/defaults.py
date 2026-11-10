@@ -198,6 +198,8 @@ ANSIBLE_BASE_MANAGED_ROLE_REGISTRY = {
     'org_member': {},
     'cow_admin': {'shortname': 'admin_base', 'model_name': 'test_app.cow', 'name': 'Cow Admin'},
     'cow_moo': {'shortname': 'action_base', 'model_name': 'test_app.cow', 'name': 'Cow Mooer', 'action': 'say_cow'},
+    'org_dashboard_viewer': {},
+    'org_dashboard_editor': {},
 }
 ANSIBLE_BASE_ALLOW_SINGLETON_USER_ROLES = True
 ANSIBLE_BASE_ALLOW_SINGLETON_TEAM_ROLES = True

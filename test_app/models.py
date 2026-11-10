@@ -25,7 +25,11 @@ from test_app.managers import UserUnmanagedManager
 class Organization(AbstractOrganization):
     class Meta:
         ordering = ['id']
-        permissions = [('member_organization', 'User is member of this organization')]
+        permissions = [
+            ('member_organization', 'User is member of this organization'),
+            ('view_dashboard_organization', 'User can view the automation dashboard for this organization'),
+            ('edit_dashboard_organization', 'User can edit the automation dashboard for this organization'),
+        ]
 
     resource = AnsibleResourceField(primary_key_field="id")
 
