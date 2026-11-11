@@ -201,13 +201,13 @@ class TeamMember(TeamMixin, ManagedActionBase):
 class OrganizationDashboardViewer(OrganizationMixin, ManagedRoleConstructor):
     name = gettext_noop("Organization Dashboard Viewer")
     description = gettext_noop("Can view the automation dashboard for a single organization")
-    permission_list = {'view_dashboard_organization'}
+    permission_list = {'view_automation_dashboard_organization'}
 
 
 class OrganizationDashboardEditor(OrganizationMixin, ManagedRoleConstructor):
     name = gettext_noop("Organization Dashboard Editor")
     description = gettext_noop("Can view and edit the automation dashboard for a single organization")
-    permission_list = {'view_dashboard_organization', 'edit_dashboard_organization'}
+    permission_list = {'view_automation_dashboard_organization', 'change_automation_dashboard_organization'}
 
 
 # Setup for registry, ultimately exists inside of permission_registry
