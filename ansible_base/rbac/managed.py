@@ -198,18 +198,6 @@ class TeamMember(TeamMixin, ManagedActionBase):
     action = 'member_team'
 
 
-class OrganizationDashboardViewer(OrganizationMixin, ManagedRoleConstructor):
-    name = gettext_noop("Automation Dashboard Viewer")
-    description = gettext_noop("Can view the automation dashboard for a single organization")
-    permission_list = {'view_organization', 'view_automation_dashboard'}
-
-
-class OrganizationDashboardEditor(OrganizationMixin, ManagedRoleConstructor):
-    name = gettext_noop("Automation Dashboard Editor")
-    description = gettext_noop("Can view and edit the automation dashboard for a single organization")
-    permission_list = {'view_organization', 'view_automation_dashboard', 'change_automation_dashboard'}
-
-
 # Setup for registry, ultimately exists inside of permission_registry
 
 
@@ -219,8 +207,6 @@ managed_role_templates = {
     'org_member': OrganizationMember,
     'team_admin': TeamAdmin,
     'team_member': TeamMember,
-    'org_dashboard_viewer': OrganizationDashboardViewer,
-    'org_dashboard_editor': OrganizationDashboardEditor,
     # These are not fully functional on their own, but can be easily subclassed
     'admin_base': ManagedAdminBase,
     'action_base': ManagedActionBase,
