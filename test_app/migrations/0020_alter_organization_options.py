@@ -22,18 +22,18 @@ def create_automation_dashboard_roles(apps, _schema_editor):
             content_type=org_ct,
             codename__in={
                 'view_organization',
-                'view_automation_dashboard_organization',
-                'change_automation_dashboard_organization',
+                'view_automation_dashboard',
+                'change_automation_dashboard',
             },
         )
     }
 
     viewer_permissions = [
         permissions_by_codename['view_organization'],
-        permissions_by_codename['view_automation_dashboard_organization'],
+        permissions_by_codename['view_automation_dashboard'],
     ]
     editor_permissions = viewer_permissions + [
-        permissions_by_codename['change_automation_dashboard_organization'],
+        permissions_by_codename['change_automation_dashboard'],
     ]
 
     for name, description, permissions in (
@@ -72,8 +72,8 @@ class Migration(migrations.Migration):
             options={
                 'permissions': [
                     ('member_organization', 'User is member of this organization'),
-                    ('view_automation_dashboard_organization', 'User can view the automation dashboard for this organization'),
-                    ('change_automation_dashboard_organization', 'User can edit the automation dashboard for this organization'),
+                    ('view_automation_dashboard', 'User can view the automation dashboard for this organization'),
+                    ('change_automation_dashboard', 'User can edit the automation dashboard for this organization'),
                 ]
             },
         ),
